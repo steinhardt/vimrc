@@ -1,25 +1,25 @@
-set nocompatible													" Disables compatibility mode
+set nocompatible                                                                " Disables compatibility mode
 
 colorscheme desert
-let mapleader=","													" Remaps leader to ',' (comma)
-set autoindent														" Enables auto-indentation
-set backspace=indent,eol,start						" Fixes backspace key annoyances
-set colorcolumn=80												" Renders line at column 80
-set display+=lastline											" Displays as much of last line as possible in current window
-set encoding=utf8													" Sets default encoding for new files
-set ffs=unix,dos,mac											" Sets default file type for new files
-set ignorecase														" Case-insensitive searches
-set laststatus=2													" Always show the status bar
-set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗	" Tabs look distinct
-set noswapfile														" Disables swap ("backup") files
-set number																" Displays line numbers
-set showmatch															" Blinks matching brackets on hover
-set showmode															" Show mode (e.g. INSERT) below status bar
-set smartcase															" Clever case-aware searches
-set smartindent														" Enables auto-indentation
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l	" Formats the status bar
-set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
-set wildmode=list:longest									" Enables auto-completion
+let mapleader=","                                                               " Remaps leader to ',' (comma)
+set autoindent                                                                  " Enables auto-indentation
+set backspace=indent,eol,start                                                  " Fixes backspace key annoyances
+set colorcolumn=80                                                              " Renders line at column 80
+set display+=lastline                                                           " Displays as much of last line as possible in current window
+set encoding=utf8                                                               " Sets default encoding for new files
+set ffs=unix,dos,mac                                                            " Sets default file type for new files
+set ignorecase                                                                  " Case-insensitive searches
+set laststatus=2                                                                " Always show the status bar
+set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗                   " Makes tabs look distinct
+set noswapfile                                                                  " Disables swap ("backup") files
+set number                                                                      " Displays line numbers
+set showmatch                                                                   " Blinks matching brackets on hover
+set showmode                                                                    " Show mode (e.g. INSERT) below status bar
+set smartcase                                                                   " Clever case-aware searches
+set smartindent                                                                 " Enables auto-indentation
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l           " Formats the status bar
+set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab                            " TODO Explain what this does
+set wildmode=list:longest                                                       " Enables auto-completion
 syntax enable
 
 
@@ -46,24 +46,24 @@ iab ~~ ≈
 
 
 " Autocommands
-autocmd bufwritepost .vimrc source $MYVIMRC	" Re-sources .vimrc when written to
+autocmd bufwritepost .vimrc source $MYVIMRC                                      " Re-sources .vimrc when written to
 
 
 " Default directory
 if has('win32')
-	cd C:\Users\KSteinhardt\Dropbox
+  cd C:\Users\KSteinhardt\Dropbox
 else
-	cd $HOME/Dropbox
+  cd $HOME/Dropbox
 endif
 
 
 " GUI fonts
 if has('win32')
-	set guifont=Lucida_Sans_Typewriter:h12
+  set guifont=Lucida_Sans_Typewriter:h12
 elseif has('mac')
-	set guifont=Monaco:h15
+  set guifont=Monaco:h15
 elseif has('unix')
-	set guifont=Monospace
+  set guifont=Monospace
 endif
 
 
@@ -89,10 +89,10 @@ vnoremap / /\v
 
 " Unicode support
 if has("multi_byte")
-	if &termencoding == ""
-		let &termencoding = &encoding
-	endif
-	set encoding=utf-8
-	setglobal fileencoding=utf-8
-	set fileencodings=ucs-bom,utf-8,latin1
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  set fileencodings=ucs-bom,utf-8,latin1
 endif
