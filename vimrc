@@ -11,14 +11,14 @@ set ffs=unix,dos,mac                                                            
 set ignorecase                                                                  " Case-insensitive searches
 set laststatus=2                                                                " Always show the status bar
 set list listchars=tab:»·,trail:·,precedes:…,extends:…,nbsp:‗                   " Makes tabs look distinct
-set noswapfile                                                                  " Disables swap ("backup") files
+set noswapfile                                                                  " Disables swap/backup files
 set number                                                                      " Displays line numbers
 set showmatch                                                                   " Blinks matching brackets on hover
 set showmode                                                                    " Show mode (e.g. INSERT) below status bar
 set smartcase                                                                   " Clever case-aware searches
 set smartindent                                                                 " Enables auto-indentation
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l           " Formats the status bar
-set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab                            " TODO Explain what this does
+set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab                            " Sets tab behaviour
 set wildmode=list:longest                                                       " Enables auto-completion
 syntax enable
 
@@ -80,8 +80,10 @@ nnoremap / /\v
 nnoremap ; :
 nnoremap <F11> :set spelllang=en_gb spell<cr>
 nnoremap <F12> :set spelllang=nl spell<cr>
-nnoremap <leader><space> :noh<cr>
-nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>, :set hls<cr>/FIXME<cr>
+nnoremap <leader><space> :set nohls<cr>
+nnoremap <leader>h yypVr=A<cr><cr>
+nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 nnoremap j gj
 nnoremap k gk
 vnoremap / /\v
