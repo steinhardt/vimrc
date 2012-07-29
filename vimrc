@@ -46,7 +46,7 @@ iab ~~ ≈
 
 
 " Autocommands
-autocmd bufwritepost .vimrc source $MYVIMRC                                      " Re-sources .vimrc when written to
+autocmd bufwritepost .vimrc source $MYVIMRC                                     " Re-sources .vimrc when written to
 
 
 " Default directory
